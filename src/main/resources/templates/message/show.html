@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Show</title>
+</head>
+</body>
+
+<p th:text="${'Номер сообщения: ' + message.getId()}"></p>
+<p th:text="${'Сообщение ' + message.getMessage()}"></p>
+<p th:text="${'Отправитель: ' + message.getSenderName()}"></p>
+<p th:text="${'Дата отправки ' + message.getCreatedAt()}"></p>
+
+
+
+<div th:if="${message}">
+    <span>Отправить отчет о выполнеии заявки? <br> Статус заявки: </span> <span th:text="${message.getStatus()}"></span>
+    <br>
+    <form th:method="PATCH" th:action="@{/index/message/{id}/response(id=${message.getId()})}">
+        <input type="submit" value="Отправить ответ о рассмотрении заявки"/>
+    </form>
+</div>
+
+
+</body>
+</html>

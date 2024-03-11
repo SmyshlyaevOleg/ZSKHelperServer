@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Ошибка запроса</p>
+
+<p th:text="${'Номер сообщения: ' + message.getId() +' Cообщение: ' + message.getMessage() +
+' Отправитель: '+ message.getSenderName() +' Дата отправки: ' +message.getCreatedAt()  + 'Статус ' + message.getStatus() }">message</a>>VALUE</p>
+</body>
+</html>

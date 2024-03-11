@@ -1,0 +1,6 @@
+2023-11-16 20:33:31 INFO  MessageControllerWithViewUsing:66 - 
+2023-11-16 20:34:15 INFO  MessageControllerWithViewUsing:66 - 3 null
+2023-11-16 20:35:05 INFO  MessageControllerWithViewUsing:70 - 3 null
+2023-11-16 20:47:55 INFO  MessageControllerWithViewUsing:72 - 3 null
+2023-11-16 20:52:02 INFO  MessageControllerWithViewUsing:78 - senderName-не должно равняться null;status-не должно равняться null;message-не должно равняться null;
+2023-11-16 20:55:10 INFO  MessageControllerWithViewUsing:78 - message-не должно равняться null;senderName-не должно равняться null;status-не должно равняться null;

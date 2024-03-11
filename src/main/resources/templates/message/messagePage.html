@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Index</title>
+
+  <style>
+    table {
+      width: 100%; /* Ширина таблицы */
+      background: white; /* Цвет фона таблицы */
+      color: black; /* Цвет текста */
+      border-spacing: 1px; /* Расстояние между ячейками */
+    }
+    td, th {
+      background: lightblue; /* Цвет фона ячеек */
+      padding: 5px; /* Поля вокруг текста */
+    }
+  </style>
+</head>
+
+<hr/>
+</head>
+<body>
+<table>
+  <tr><th>Номер сообщения </th><th>Сообщение</th><th>Отправитель</th><th>Статус</th><th>Дата отправки</th><th>Подробнее</th></tr>
+  <div th:each="message : ${messages}">
+
+  <tr>
+    <td width="5%" align="center"><p th:text="${message.getId()}"></p></td>
+    <td width="35%" align="center"><p th:text="${message.getMessage()}"></p> </td>
+    <td width="15%" align="center"><p th:text="${message.getSenderName()}"></p></td>
+    <td width="15%" align="center"><p th:text="${message.getStatus()}"></p></td>
+    <td width="15%" align="center"><time  th:text="${message.getCreatedAt()}"></time></td>
+    <td width="15%" align="center"><a th:href="@{/index/message/{id}(id=${message.getId()})}">
+      <input type="submit" value="Подробнее"/></a></td>
+  </tr>
+  </div>
+</table>
+
+<br/>
+
+<form th:method="GET" th:action="@{/index}">
+  <input type="submit" value="Вернуться на стартовую страницу"/>
+</form>
+
+</body>
+</html>

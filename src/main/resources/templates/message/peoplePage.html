@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Index</title>
+
+<style>
+    table {
+        width: 100%; /* Ширина таблицы */
+        background: white; /* Цвет фона таблицы */
+        color: black; /* Цвет текста */
+        border-spacing: 1px; /* Расстояние между ячейками */
+    }
+    td, th {
+        background: lightblue; /* Цвет фона ячеек */
+        padding: 5px; /* Поля вокруг текста */
+    }
+</style>
+</head>
+<body>
+<table>
+    <tr><th>id </th><th>Username</th><th>Пользователь</th></tr>
+    <div th:each="person : ${users}">
+
+        <tr>
+            <td width="35%" align="center"><p th:text="${person.getTelegramId()}"></p></td>
+            <td width="35%" align="center"><p th:text="${person.getUserName()}"></p> </td>
+            <td width="30%" align="center"><p th:text="${person.getFullName()}"></p></td>
+
+        </tr>
+    </div>
+</table>
+
+<br/>
+
+<form th:method="GET" th:action="@{/index}">
+    <input type="submit" value="Вернуться на стартовую страницу"/>
+</form>
+
+</body>
+</html>
